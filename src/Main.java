@@ -8,12 +8,10 @@ public class Main {
         Fraction a = new Fraction(1,5);
         Fraction b = new Fraction(2,15);
 
-        a = a.plus(b);
-        System.out.println(a);
-
-        Fraction c = new Fraction(5,3);
-        System.out.println(c.getWholes());
-        System.out.println(c);
+        System.out.println(Calculator.add(a,b));
+        System.out.println(Calculator.subtract(a,b));
+        System.out.println(Calculator.multiply(a,b));
+        System.out.println(Calculator.divide(a,b));
     }
 
 }
