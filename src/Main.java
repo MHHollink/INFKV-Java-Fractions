@@ -13,6 +13,7 @@ public class Main {
 
         Fraction c = new Fraction(5,3);
         System.out.println(c.getWholes());
+        System.out.println(c);
     }
 
 }

@@ -120,6 +120,14 @@ public class Fraction {
 
     @Override
     public String toString() {
+
+        // IF WHOLES
+        if(numerator > denominator) {
+            wholes = (numerator-(numerator%denominator))/denominator;
+
+            return wholes + " and " + (this.getNumerator()-(this.getDenominator()*wholes)) + "/" + this.getDenominator();
+        }
+        // ELSE
         return this.getNumerator() + "/" + this.getDenominator();
     }
 }
