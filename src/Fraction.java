@@ -1,17 +1,19 @@
 /**
- * This Class was created by marcel on 28-3-2015
- * Time of creation : 10:40
+ * Created by Marcel Hollink (Mjollnir94) on 28-3-2015
+ * Time of creation : 10:39
  */
 public class Fraction {
 
+    /** Variables for an fraction **/
     private int numerator;
     private int denominator;
     private int wholes;
 
     /**
-     * Constuctor of the fraction, sets the values of the fraction, then tries to simplify if possible.
-     * @param numerator top of the fraction
-     * @param denominator bottom of the fraction
+     *
+     * @param wholes
+     * @param numerator
+     * @param denominator
      */
     public Fraction(int wholes, int numerator, int denominator) {
         this.numerator = numerator + (denominator*wholes);
@@ -33,6 +35,11 @@ public class Fraction {
         }
     }
 
+    /**
+     *
+     * @param numerator
+     * @param denominator
+     */
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
@@ -55,16 +62,26 @@ public class Fraction {
 
     }
 
-
-
+    /**
+     *
+     * @return
+     */
     public int getDenominator() {
         return denominator;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getNumerator() {
         return numerator;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getWholes(){
 
         if(numerator > denominator) {
@@ -77,13 +94,13 @@ public class Fraction {
     @Override
     public String toString() {
 
-        // IF WHOLES
+        /** IF WHOLES **/
         if(numerator > denominator) {
             wholes = (numerator-(numerator%denominator))/denominator;
 
             return wholes + " and " + (this.getNumerator()-(this.getDenominator()*wholes)) + "/" + this.getDenominator();
         }
-        // ELSE
+        /** ELSE **/
         return this.getNumerator() + "/" + this.getDenominator();
     }
 }

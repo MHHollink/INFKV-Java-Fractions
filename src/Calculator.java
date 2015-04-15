@@ -1,14 +1,15 @@
 /**
- * This Class was created by marcel on 15-4-2015
- * Time of creation : 18:07
+ * Created by Marcel Hollink (Mjollnir94) on 28-3-2015
+ * Time of creation : 10:39
  */
 public class Calculator {
 
     /**
-     * divides the fraction by another given fraction.
+     * Divides fraction A by fraction B.
      *
-     * @param a Fraction to devide by.
-     * @return new fraction after division
+     * @param a Fraction a, the fraction above the ditch
+     * @param b Fraction b, the fraction below the ditch
+     * @return simplified Fraction as result of the division.
      */
     public static Fraction divide(Fraction a, Fraction b) {
         return simplify(
@@ -18,10 +19,11 @@ public class Calculator {
     }
 
     /**
-     * multiplies the fraction bu another given fraction
+     * Multiplies fraction A by fraction B.
      *
-     * @param a Fraction to multiply by.
-     * @return new fraction after the multiplication
+     * @param a Fraction a
+     * @param b Fraction b
+     * @return simplified Fraction as result of the multiplication.
      */
     public static Fraction multiply(Fraction a, Fraction b) {
         return simplify(
@@ -31,9 +33,11 @@ public class Calculator {
     }
 
     /**
+     * Subtracts fraction A by fraction B.
      *
-     * @param a Fraction to subtract with.
-     * @return new fraction after subtraction
+     * @param a Fraction a, the fraction in front of the minus
+     * @param b Fraction b, the fraction after the minus
+     * @return simplified Fraction as result of the subtraction.
      */
     public static Fraction subtract(Fraction a, Fraction b) {
         return simplify(new Fraction(
@@ -42,9 +46,11 @@ public class Calculator {
     }
 
     /**
+     * Adds fraction A by fraction B.
      *
-     * @param a Fraction to add on.
-     * @return new fraction after the addition
+     * @param a Fraction a
+     * @param b Fraction b
+     * @return simplified Fraction as result of the summation.
      */
     public static Fraction add(Fraction a, Fraction b) {
         return simplify(
@@ -54,8 +60,9 @@ public class Calculator {
     }
 
     /**
+     * Simplifies Fraction A to the smallest possible Fraction.
      *
-     * @param a fraction after calculation from multiplication, division, addition or subtraction
+     * @param a fraction after calculation from multiplication, division, summation or subtraction
      * @return The smallest possible fraction
      */
     private static Fraction simplify(Fraction a) {
