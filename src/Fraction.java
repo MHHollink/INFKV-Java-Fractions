@@ -118,7 +118,10 @@ public class Fraction {
                 return String.valueOf(wholes);
             }
 
-            return wholes +" "+ (this.getNumerator()-(this.getDenominator()*wholes)) + "/" + this.getDenominator();
+            if(wholes == 0) {
+                return (this.getNumerator()-(this.getDenominator()*wholes)) + "/" + Math.abs(this.getDenominator());
+            }
+            return wholes +" "+ (this.getNumerator()-(this.getDenominator()*wholes)) + "/" + Math.abs(this.getDenominator());
         }
         /** ELSE **/
         return this.getNumerator() + "/" + this.getDenominator();

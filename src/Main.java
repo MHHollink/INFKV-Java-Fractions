@@ -13,16 +13,33 @@ public class Main {
         Fraction d = new Fraction(12, 9, 83);
         Fraction e = new Fraction(2, 11, 22);
 
-        // Add fraction A to B
+        // Adding fraction
+        System.out.println("adding fractions \n------");
+        System.out.println("("+ a +") + ("+ a + ") = " + Calculator.add(a,a));
         System.out.println("("+ a +") + ("+ b + ") = " + Calculator.add(a,b));
+        System.out.println("("+ b +") + ("+ c + ") = " + Calculator.add(b,c));
+        System.out.println("("+ a +") + ("+ d + ") = " + Calculator.add(a,d));
+        System.out.println("("+ c +") + ("+ e + ") = " + Calculator.add(c,e));
 
-        // Subtract fraction A to C
-        System.out.println("("+ a +") - ("+ c + ") = " + Calculator.subtract(a,c));
+        System.out.println("\nsubtracting fractions \n------");
+        System.out.println("("+ a +") - ("+ a + ") = " + Calculator.subtract(a,a));
+        System.out.println("("+ a +") - ("+ e + ") = " + Calculator.subtract(a,e));
+        System.out.println("("+ e +") - ("+ c + ") = " + Calculator.subtract(e,c));
+        System.out.println("("+ b +") - ("+ d + ") = " + Calculator.subtract(b,d));
+        System.out.println("("+ d +") - ("+ a + ") = " + Calculator.subtract(d,a));
 
-        // Multiply fraction A to B
+        System.out.println("\nmultiplication fractions \n------");
         System.out.println("("+ c +") * ("+ d + ") = " + Calculator.multiply(c,d));
+        System.out.println("("+ c +") * ("+ e + ") = " + Calculator.multiply(c,e));
+        System.out.println("("+ e +") * ("+ c + ") = " + Calculator.multiply(e,c));
+        System.out.println("("+ a +") * ("+ d + ") = " + Calculator.multiply(a,d));
+        System.out.println("("+ a +") * ("+ a + ") = " + Calculator.multiply(a,a));
 
-        // Divide fraction A to B
+        System.out.println("\ndivision fractions \n------");
         System.out.println("("+ e +") / ("+ b + ") = " + Calculator.divide(e,b));
+        System.out.println("("+ a +") / ("+ b + ") = " + Calculator.divide(a,b));
+        System.out.println("("+ a +") / ("+ c + ") = " + Calculator.divide(a,c));
+        System.out.println("("+ e +") / ("+ b + ") = " + Calculator.divide(e,b));
+        System.out.println("("+ e +") / ("+ e + ") = " + Calculator.divide(e,e));
     }
 }
