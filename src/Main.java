@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         // Create 2 Fractions
-        Fraction a = new Fraction(1,5);
-        Fraction b = new Fraction(2,15);
+        Fraction a = new Fraction(-1,3);
+        Fraction b = new Fraction(1,3);
 
         // Add fraction A to B
         System.out.println(Calculator.add(a,b));
@@ -22,5 +22,7 @@ public class Main {
         // Divide fraction A to B
         System.out.println(Calculator.divide(a,b));
 
+
+        System.out.println(new Fraction(-6,9));
     }
 }

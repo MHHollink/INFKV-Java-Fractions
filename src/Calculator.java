@@ -65,10 +65,23 @@ public class Calculator {
      * @param a fraction after calculation from multiplication, division, summation or subtraction
      * @return The smallest possible fraction
      */
-    private static Fraction simplify(Fraction a) {
-        int x = a.getNumerator();
+    public static Fraction simplify(Fraction a) {
+
+        int x;
+        if( a.getNumerator() > 0){
+            x = a.getNumerator();
+        } else {
+            x = Math.abs(a.getNumerator());
+        }
 
         while (x > 0) {
+
+            if(Math.abs(a.getNumerator()) % x == 0
+                    && a.getDenominator() % x == 0)
+            {
+                return new Fraction(a.getNumerator() / x, a.getDenominator() / x);
+            }
+
 
             if (a.getNumerator() % x == 0 && a.getDenominator() % x == 0) {
                 return new Fraction(a.getNumerator() / x, a.getDenominator() / x);

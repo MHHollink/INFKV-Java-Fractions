@@ -94,9 +94,24 @@ public class Fraction {
     @Override
     public String toString() {
 
+        Fraction x = Calculator.simplify(this);
+        this.numerator = x.getNumerator();
+        this.denominator = x.getDenominator();
+        this.wholes = x.getWholes();
+
+        if(numerator == 0){
+            return String.valueOf(wholes);
+        } else if (Math.abs(numerator) == denominator) {
+            return String.valueOf(wholes-1);
+        }
+
         /** IF WHOLES **/
-        if(numerator > denominator) {
+        if(numerator >= denominator) {
             wholes = (numerator-(numerator%denominator))/denominator;
+
+            if(this.getNumerator()-(this.getDenominator()*wholes) == 0){
+                return String.valueOf(wholes);
+            }
 
             return wholes + " and " + (this.getNumerator()-(this.getDenominator()*wholes)) + "/" + this.getDenominator();
         }
