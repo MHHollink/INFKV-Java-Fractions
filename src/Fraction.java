@@ -16,19 +16,26 @@ public class Fraction {
      * @param denominator
      */
     public Fraction(int wholes, int numerator, int denominator) {
+        if(wholes < 0 && numerator > 0){
+            numerator -= numerator*2;
+        }
+        if(wholes > 0 && numerator < 0){
+            wholes -= wholes*2;
+        }
+
         this.numerator = numerator + (denominator*wholes);
         this.denominator = denominator;
 
-        if(numerator > denominator) {
-            this.wholes = (numerator-(numerator%denominator))/denominator;
+        if(this.numerator > this.denominator) {
+            this.wholes = (this.numerator-(this.numerator%this.denominator))/this.denominator;
         }
 
-        int x = numerator;
+        int x = this.numerator;
         while (x > 0) {
 
-            if (numerator % x == 0 && denominator % x == 0) {
-                this.numerator = numerator / x;
-                this.denominator = denominator / x;
+            if (this.numerator % x == 0 && this.denominator % x == 0) {
+                this.numerator = this.numerator / x;
+                this.denominator = this.denominator / x;
                 break;
             }
             x--;
@@ -44,16 +51,16 @@ public class Fraction {
         this.numerator = numerator;
         this.denominator = denominator;
         wholes = 0;
-        if(numerator > denominator) {
-            wholes = (numerator-(numerator%denominator))/denominator;
+        if(this.numerator > this.denominator) {
+            wholes = (this.numerator-(this.numerator%this.denominator))/this.denominator;
         }
 
-        int x = numerator;
+        int x = this.numerator;
         while (x > 0) {
 
-            if (numerator % x == 0 && denominator % x == 0) {
-                this.numerator = numerator / x;
-                this.denominator = denominator / x;
+            if (this.numerator % x == 0 && this.denominator % x == 0) {
+                this.numerator = this.numerator / x;
+                this.denominator = this.denominator / x;
                 break;
             }
             x--;
@@ -101,19 +108,17 @@ public class Fraction {
 
         if(numerator == 0){
             return String.valueOf(wholes);
-        } else if (Math.abs(numerator) == denominator) {
-            return String.valueOf(wholes-1);
         }
 
         /** IF WHOLES **/
-        if(numerator >= denominator) {
+        if(numerator >= denominator || Math.abs(numerator) >= denominator) {
             wholes = (numerator-(numerator%denominator))/denominator;
 
             if(this.getNumerator()-(this.getDenominator()*wholes) == 0){
                 return String.valueOf(wholes);
             }
 
-            return wholes + " and " + (this.getNumerator()-(this.getDenominator()*wholes)) + "/" + this.getDenominator();
+            return wholes +" "+ (this.getNumerator()-(this.getDenominator()*wholes)) + "/" + this.getDenominator();
         }
         /** ELSE **/
         return this.getNumerator() + "/" + this.getDenominator();
